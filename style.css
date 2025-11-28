@@ -97,7 +97,8 @@ footer {
 
 .copyrigth {
     font-weight: 500;
-    color: var(--blue);;
+    color: var(--blue);
+    text-align: center;
 }
 
 .copyrigth:hover {
