@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,600&display=swap');
 
-:root{
-    --white-light:#e8f0f2;
-    --blue: #2c13ef;
+:root {
+    --secondary-color: #e8f0f2;
+    --primary-color: #2c13ef;
 }
+
 
 *{
     margin: 0;
@@ -12,17 +13,22 @@
     text-decoration: none;
 }
 
-body, html{
+body, html {
+    display: flex;
+    flex-direction: column;
     font-family: 'Poppins', sans-serif;
-    background: var(--white-light);
+    background: var(--secondary-color);
+    color: var(--primary-color);
     width: 100vw;
     height: 100vh;
 }
+
 
 .container{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1;
 }
 
 .container .tree-container{
@@ -39,7 +45,7 @@ body, html{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--primary-color);  
     border-radius: 50%;
 }
 
@@ -54,7 +60,7 @@ body, html{
 
 .tree-container .insta-user{
     margin-top: 15px;
-    color: black;
+    color: var(--primary-color);
     font-size: 26px;
 }
 
@@ -65,29 +71,39 @@ body, html{
 }
 
 .links-container .link{
-    color: var(--blue);
+    display: flex;
+    padding-left: 5%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30%; 
     margin-top: 10px;
     width: 325px;
-    border: 2px solid var(--blue);
     border-radius: 4px;
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
-    text-align: center;
-    padding: 12px 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
     transition: ease 0.3s;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
-.links-container .link:hover{
-    background: var(--blue);
-    color: var(--white-light);
+.links-container .link:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 
+.links-container .link i {
+    font-size: 18px;
+}
 
+
+/* FOOTER */
 
 footer {
-    margin-top: 40px;
+    margin-top: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -97,10 +113,41 @@ footer {
 
 .copyrigth {
     font-weight: 500;
-    color: var(--blue);
+    color: var(--primary-color);
     text-align: center;
 }
 
-.copyrigth:hover {
-    color: black;
+
+
+/* THEME */
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+
+
+body.dark {
+    --secondary-color: #0f172a;
+    --primary-color: #e8f0f2;
 }
